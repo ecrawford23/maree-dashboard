@@ -154,3 +154,60 @@ export const INTELLIGENCE_INSIGHTS = {
     action: 'Use 70% of effort on organic testing. Amplify winners with 30% paid budget',
   },
 };
+
+/**
+ * Parse PERFORMANCE-METRICS.md to extract real Meta API data
+ */
+export function parsePerformanceMetrics(content: string) {
+  const metrics: Record<string, any> = {};
+
+  // Extract platform sections
+  const platformMatches = content.match(/## (Instagram|Facebook|TikTok|LinkedIn)/g) || [];
+
+  for (const platform of platformMatches) {
+    const platformName = platform.replace('## ', '');
+    const platformSection = content.split(platform)[1]?.split('##')[0] || '';
+
+    const followerMatch = platformSection.match(/\| Followers\s*\|\s*(\d+)/);
+    const engagementMatch = platformSection.match(/\| Engagement Rate\s*\|\s*([\d.]+)%/);
+    const reachMatch = platformSection.match(/\| Reach.*?\|\s*(\d+)/);
+    const impressionsMatch = platformSection.match(/\| Impressions.*?\|\s*(\d+)/);
+
+    metrics[platformName.toLowerCase()] = {
+      followers: followerMatch ? parseInt(followerMatch[1]) : 0,
+      engagementRate: engagementMatch ? parseFloat(engagementMatch[1]) : 0,
+      reach: reachMatch ? parseInt(reachMatch[1]) : 0,
+      impressions: impressionsMatch ? parseInt(impressionsMatch[1]) : 0,
+    };
+  }
+
+  return metrics;
+}
+
+/**
+ * Parse SOCIAL-CALENDAR.md to extract scheduled posts with status
+ */
+export function parseCalendar(content: string) {
+  const posts: Array<any> = [];
+  const postMatches = content.match(/###\s+\d+:\d+\s+(.*?)(?=###|\n##|\Z)/gs) || [];
+
+  for (const match of postMatches) {
+    const titleMatch = match.match(/\*\*Title:\*\*\s*(.+)/);
+    const platformMatch = match.match(/\*\*Platform:\*\*\s*(.+)/);
+    const statusMatch = match.match(/\*\*Status:\*\*\s*(.+)/);
+    const formatMatch = match.match(/\*\*Format:\*\*\s*(.+)/);
+    const captionMatch = match.match(/\*\*Caption:\*\*\s*"(.+?)"/);
+
+    if (titleMatch) {
+      posts.push({
+        title: titleMatch[1].trim(),
+        platform: platformMatch ? platformMatch[1].trim() : 'Instagram',
+        status: statusMatch ? statusMatch[1].trim() : 'Draft',
+        format: formatMatch ? formatMatch[1].trim() : 'Post',
+        caption: captionMatch ? captionMatch[1].trim() : '',
+      });
+    }
+  }
+
+  return posts;
+}
