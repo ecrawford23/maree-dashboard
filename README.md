@@ -22,20 +22,27 @@ A production-ready SMMA dashboard for managing 5 clients' social media strategy,
 ## 🗂️ Project Structure
 
 ```
-dashboard-app/
+maree-dashboard/
 ├── pages/
 │   ├── index.tsx           # Main dashboard overview
 │   ├── clients/[id].tsx    # Per-client detail page
+│   ├── api/clients.ts      # API endpoint (reads canonical files)
 │   └── _app.tsx            # App wrapper
-├── public/
-│   └── data.json           # Master data (updated by agents)
+├── canonical-files/        # Single source of truth (synced by agents)
+│   ├── 02_Clients/[CLIENT]/
+│   │   ├── 00_Intake & Discovery/
+│   │   ├── 03_Deliverables/
+│   │   └── 04_Analytics/
+│   └── 03_Analytics/       # Shared agent outputs
 ├── styles/
 │   └── dashboard.module.css # All styling
+├── lib/
+│   └── fileParser.ts       # Parse markdown files
 ├── package.json
 ├── next.config.js
 ├── tsconfig.json
-├── DEPLOY.md              # Vercel deployment guide
-└── README.md              # This file
+├── vercel.json             # Vercel config
+└── README.md               # This file
 ```
 
 ---
@@ -78,28 +85,28 @@ TL;DR:
 
 ---
 
-## 🤖 Automation Agents
+## 🤖 Automation Agents (M/W/F Schedule)
 
-Each agent runs on a schedule and updates `public/data.json`:
+Each agent runs on schedule and updates `canonical-files/`:
 
-| Agent | Schedule | Updates | Purpose |
+| Agent | Schedule | Output File | Purpose |
 |-------|----------|---------|---------|
-| Performance Analyzer | Mon 10 AM | Top posts, engagement metrics | Finds what worked last week |
-| Time Recommender | Mon 11 AM | Optimal posting windows | Best time to post per platform |
-| Diversity Tracker | Fri 3 PM | Content format balance | Ensures mix of Reels, Carousels, Stories, Static |
-| Trend Spotter | Daily 8 AM | Trending topics | Relevant hashtags & news to tie into |
-| Competitor Monitor | Tue 9 AM | Competitor activity | What competitors posted, what worked |
-| Production Manager | Sun 6 PM | Asset status checklist | What's missing, what's ready |
-| Intelligence Report | Fri 4 PM | Weekly summary | All insights in one brief |
+| Performance Analyzer | Mon 10 AM | `03_Analytics/performance-analysis/PERFORMANCE-ANALYSIS.md` | Top posts, engagement metrics |
+| Time Recommender | Mon 11 AM | `03_Analytics/POSTING-SCHEDULE-RECOMMENDATIONS.md` | Optimal posting windows |
+| Production Manager | Mon 12:30 PM | `02_Systems/production-checklists/PRODUCTION-CHECKLIST-THIS-WEEK.md` | Asset status checklist |
+| Trend Spotter | Wed 8 AM | `03_Analytics/trends/WEEKLY-OPPORTUNITIES.md` | Trending topics & news |
+| Competitor Monitor | Wed 9 AM | `03_Analytics/competitor-analysis/WEEKLY-COMPETITOR-MOVES.md` | Competitor activity |
+| Diversity Tracker | Fri 3 PM | `02_Systems/production-checklists/DIVERSITY-REPORT-CURRENT-WEEK.md` | Format balance analysis |
+| Intelligence Report | Fri 4 PM | `03_Analytics/intelligence-reports/FRIDAY-INTELLIGENCE-BRIEF.md` | Weekly synthesis brief |
 
-**Setup:** See [AUTOMATION-AGENTS.md](../AUTOMATION-AGENTS.md) for Claude Code schedule commands.
+**Setup:** See [MARÉE-AGENT-SYSTEM.md](../MARÉE-AGENT-SYSTEM.md) for exact prompts and Claude Code commands.
 
 ---
 
 ## 🔄 Data Flow
 
 ```
-Claude Code Agents update public/data.json
+Claude Code Agents update canonical-files/
          ↓
 git commit + push to GitHub (your repo)
          ↓
@@ -107,10 +114,10 @@ GitHub webhook → Vercel API
          ↓
 Vercel rebuilds Next.js app in ~10 seconds
          ↓
-Dashboard live-updates (no refresh needed)
+Dashboard reads from GitHub raw URLs → live-updates
 ```
 
-**Important:** Only GitHub pushes trigger rebuilds. Manual edits to local data.json won't show until you commit & push.
+**Important:** Only GitHub pushes trigger rebuilds. Local edits won't show until you commit & push.
 
 ---
 
@@ -142,47 +149,44 @@ Dashboard live-updates (no refresh needed)
 
 ---
 
-## 📝 Adding Clients or Data
+## 📝 Adding Client Data
 
-Edit `public/data.json` directly:
+Data lives in `canonical-files/02_Clients/[CLIENT]/`:
 
-```json
-{
-  "clients": [
-    {
-      "id": "new-client",
-      "name": "New Client Name",
-      "color": "#color-code",
-      "type": "Industry",
-      "platforms": [
-        {
-          "name": "Instagram",
-          "followers": 5000,
-          "engagement": 4.2,
-          "url": "https://instagram.com/..."
-        }
-      ],
-      ...
-    }
-  ]
-}
+### Client Folder Structure
+```
+canonical-files/02_Clients/[CLIENT]/
+├── 00_Intake & Discovery/
+│   ├── NARRATIVE-BRIEF.md         # Brand overview & strategy
+│   ├── COMPETITIVE-AUDIT.md       # Competitor analysis
+│   └── SOCIAL-AUDIT.md            # Current channel audit
+├── 03_Deliverables/
+│   └── SOCIAL-CALENDAR.md         # Scheduled posts with status
+├── 04_Analytics/
+│   └── PERFORMANCE-METRICS.md     # Meta API data + insights
+└── _Archive/                       # Old versions (date-stamped)
 ```
 
-After editing:
+### To Add a New Client
+1. Create folder: `canonical-files/02_Clients/[NEW_CLIENT]/`
+2. Create subdirectories (00_*, 03_*, 04_*)
+3. Add markdown files with client data
+4. Push to GitHub
 ```bash
-git add public/data.json
-git commit -m "chore: add new client"
+git add canonical-files/02_Clients/[NEW_CLIENT]/
+git commit -m "feat: add [new-client] data"
 git push origin main
 ```
 
-Dashboard updates automatically within 30 seconds.
+Dashboard auto-updates within 30 seconds.
 
 ---
 
 ## ⚠️ Known Limitations
 
-- Dashboard is **read-only** — agents update data, you view it
-- No built-in post scheduling — that's in Hootsuite/Buffer/Later (agents monitor those)
+- Dashboard is **read-only** — agents update canonical-files, dashboard reads live
+- Agent automation requires Claude Code setup (scheduled tasks with git push access)
+- No built-in post scheduling — agents monitor Hootsuite/Buffer/Later
 - No authentication yet — deploy on private Vercel team or add Vercel Protection
 
 ---
@@ -190,9 +194,10 @@ Dashboard updates automatically within 30 seconds.
 ## 📞 Questions?
 
 - **Deployment issues?** See [DEPLOY.md](./DEPLOY.md)
-- **Agent setup?** See [AUTOMATION-AGENTS.md](../AUTOMATION-AGENTS.md)
-- **Data structure?** Check `public/data.json` comments
+- **Agent setup?** See [MARÉE-AGENT-SYSTEM.md](../MARÉE-AGENT-SYSTEM.md)
+- **Data structure?** Check `canonical-files/` folder structure above
 - **Design changes?** Edit `styles/dashboard.module.css`
+- **File parsing?** See `lib/fileParser.ts` for markdown parsing logic
 
 ---
 
