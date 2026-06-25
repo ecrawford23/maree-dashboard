@@ -85,7 +85,7 @@ export default function ClientDetail() {
       <h2 className={styles.sectionTitle}>Platforms</h2>
       <div className={styles.clientsGrid} style={{ marginBottom: 40 }}>
         {client.platforms.map(platform => (
-          <a key={platform.name} href={platform.url} target="_blank" rel="noopener noreferrer" style={{ textDecoration: 'none' }} className={styles.clientCard} style={{ borderLeftColor: client.color }}>
+          <a key={platform.name} href={platform.url} target="_blank" rel="noopener noreferrer" className={styles.clientCard} style={{ textDecoration: 'none', borderLeftColor: client.color }}>
             <div className={styles.clientName}>{platform.name}</div>
             <div style={{ marginTop: 16, display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 12 }}>
               <div>
