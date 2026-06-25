@@ -1,0 +1,327 @@
+{
+  "lastUpdated": "2026-06-24T09:00:00Z",
+  "engagementWindow": "12:00 PM - 3:00 PM",
+  "week": {
+    "start": "2026-06-24",
+    "end": "2026-06-30"
+  },
+  "clients": [
+    {
+      "id": "channel-south",
+      "name": "Channel South",
+      "color": "#667eea",
+      "type": "Hospitality/Events",
+      "location": "Gulfport, MS",
+      "handle": "@channelsouthms",
+      "sourceDoc": "02_Clients/Channel South/2026_0624_Organic-Growth-Tracker.md",
+      "auditDate": "2026-06-24",
+      "platforms": [
+        {"name": "Instagram", "followers": 116, "engagement": 5.5, "url": "https://instagram.com/channelsouthms"},
+        {"name": "Facebook", "followers": 116, "engagement": 4.8, "url": "https://facebook.com/channelsouthms"}
+      ],
+      "monthlyGoal": {
+        "followers": 25,
+        "engagement": "5.5%"
+      },
+      "competitors": [
+        "Holiday Inn Gulfport",
+        "Local waterfront venues",
+        "Regional event spaces"
+      ],
+      "keywordsFocus": [
+        "Channel South Gulfport",
+        "Hotel Holden",
+        "downtown Gulfport waterfront",
+        "Gulfport events",
+        "Great Southern Hotel"
+      ],
+      "thisWeekPosts": 3,
+      "assetsReady": 2,
+      "nextBatch": "Wednesday",
+      "status": "On Track",
+      "topPost": {
+        "title": "Hotel Holden Brand Reveal",
+        "engagement": "28 likes, 5 comments",
+        "reach": "1.1K"
+      },
+      "contentThemes": [
+        "Heritage storytelling",
+        "Hotel Holden reveals",
+        "Construction progress",
+        "Groundbreaking moments"
+      ]
+    },
+    {
+      "id": "bellamare",
+      "name": "Bellamare",
+      "color": "#10b981",
+      "type": "Real Estate Development",
+      "location": "Southeast",
+      "handle": "@bellamaredevelopment",
+      "sourceDoc": "02_Clients/Bellamare/Social Media/2026_0624_Organic-Growth-Tracker.md",
+      "auditDate": "2026-06-23",
+      "platforms": [
+        {"name": "Instagram", "followers": 192, "engagement": 3.9, "url": "https://instagram.com/bellamaredevelopment"},
+        {"name": "Facebook", "followers": 400, "engagement": 3.1, "url": "https://facebook.com/bellamaredevelopment"},
+        {"name": "LinkedIn", "followers": 0, "engagement": 0, "url": "https://linkedin.com/company/bellamare"}
+      ],
+      "monthlyGoal": {
+        "followers": 75,
+        "engagement": "3.5%"
+      },
+      "competitors": [
+        "Fidelity Development",
+        "Southmark Development",
+        "National developers"
+      ],
+      "keywordsFocus": [
+        "Bellamare Development",
+        "mixed-use development",
+        "real estate Southeast",
+        "Channel South Gulfport",
+        "Gallery Madison"
+      ],
+      "thisWeekPosts": 2,
+      "assetsReady": 2,
+      "nextBatch": "Friday",
+      "status": "On Track",
+      "topPost": {
+        "title": "Gallery Madison construction progress",
+        "engagement": "6 likes, 0 comments",
+        "reach": "600"
+      },
+      "contentThemes": [
+        "Project milestones",
+        "Construction progress",
+        "Community partnerships",
+        "Development storytelling"
+      ]
+    },
+    {
+      "id": "gallery-madison",
+      "name": "The Gallery Madison",
+      "color": "#f59e0b",
+      "type": "Mixed-Use / Arts & Entertainment",
+      "location": "Madison, MS",
+      "handle": "@thegallerymadison",
+      "sourceDoc": "_SOCIAL/Gallery Madison/2026-06-24_NARRATIVE-BRIEF_Gallery-Madison-July-IG-FB.md",
+      "auditDate": "2026-06-24",
+      "platforms": [
+        {"name": "Instagram", "followers": 0, "engagement": 0, "url": "https://instagram.com/thegallerymadison"},
+        {"name": "Facebook", "followers": 0, "engagement": 0, "url": "https://facebook.com/thegallerymadison"}
+      ],
+      "monthlyGoal": {
+        "followers": 200,
+        "engagement": "3%"
+      },
+      "competitors": [
+        "Battery Atlanta",
+        "Halcyon, Alpharetta",
+        "Avalon, Alpharetta",
+        "The Wharf DC"
+      ],
+      "keywordsFocus": [
+        "Gallery Madison",
+        "Spinners Family Entertainment",
+        "Royal Street Madison",
+        "Madison's new backyard",
+        "#DreamBigMadison"
+      ],
+      "thisWeekPosts": 0,
+      "assetsReady": 0,
+      "nextBatch": "July 1 Launch",
+      "status": "Launching",
+      "topPost": {
+        "title": "Launching July 1",
+        "engagement": "TBD",
+        "reach": "TBD"
+      },
+      "contentThemes": [
+        "Construction storytelling",
+        "Spinners anchor tenant",
+        "Job creation",
+        "Community gathering",
+        "Royal Street retail"
+      ]
+    },
+    {
+      "id": "germantown-village",
+      "name": "Germantown Village",
+      "color": "#ec4899",
+      "type": "Retail/Community Center",
+      "location": "Gluckstadt, MS",
+      "handle": "@germantownvillage",
+      "sourceDoc": "02_Clients/Germantown Village/00_Intake & Discovery/GERMANTOWN-NARRATIVE-BRIEF-JULY-2026.md",
+      "auditDate": "2026-06-24",
+      "platforms": [
+        {"name": "Instagram", "followers": 0, "engagement": 0, "url": "https://instagram.com/germantownvillage"},
+        {"name": "Facebook", "followers": 0, "engagement": 0, "url": "https://facebook.com/germantownvillage"}
+      ],
+      "monthlyGoal": {
+        "followers": 500,
+        "engagement": "3%"
+      },
+      "competitors": [
+        "The District at Eastover",
+        "Madison County retail centers",
+        "Jackson area shopping",
+        "Community retail malls"
+      ],
+      "keywordsFocus": [
+        "Germantown Village Gluckstadt",
+        "Madison County retail",
+        "Poke Stop",
+        "KidStrong",
+        "Farmers market"
+      ],
+      "thisWeekPosts": 0,
+      "assetsReady": 0,
+      "nextBatch": "July 1 Launch",
+      "status": "Launching",
+      "topPost": {
+        "title": "Launching July 1",
+        "engagement": "TBD",
+        "reach": "TBD"
+      },
+      "contentThemes": [
+        "Tenant spotlights",
+        "Community gathering",
+        "Farmers market",
+        "Local businesses",
+        "Family events"
+      ]
+    },
+    {
+      "id": "maree-creative",
+      "name": "Marée Creative",
+      "color": "#8b5cf6",
+      "type": "Creative Agency",
+      "location": "Southeast",
+      "handle": "@mareecreative_",
+      "sourceDoc": "_SOCIAL/2026_0624_MAREE-IG-AUDIT-DEEP.md",
+      "auditDate": "2026-06-24",
+      "platforms": [
+        {"name": "Instagram", "followers": 24, "engagement": 2.1, "url": "https://instagram.com/mareecreative_"}
+      ],
+      "monthlyGoal": {
+        "followers": 100,
+        "engagement": "3%"
+      },
+      "competitors": [
+        "Other Southeast creative agencies",
+        "Design studios",
+        "Branding consultants",
+        "Marketing agencies"
+      ],
+      "keywordsFocus": [
+        "creative placemaking",
+        "brand strategy",
+        "real estate branding",
+        "placemaking studio",
+        "mixed-use development"
+      ],
+      "thisWeekPosts": 10,
+      "assetsReady": 10,
+      "nextBatch": "Immediate - Resume posting",
+      "status": "Behind",
+      "topPost": {
+        "title": "Gallery Madison positioning post",
+        "engagement": "11 likes, 1 comment",
+        "reach": "~400"
+      },
+      "contentThemes": [
+        "Project case studies",
+        "Placemaking philosophy",
+        "Design process",
+        "Client spotlights",
+        "Brand storytelling"
+      ]
+    }
+  ],
+  "weeklyPerformance": {
+    "totalPosts": 15,
+    "assetsReady": 12,
+    "assetsInProgress": 2,
+    "assetsMissing": 1,
+    "avgEngagement": 3.4,
+    "topClient": "Channel South",
+    "needsAttention": [
+      "Marée Creative - 12-day posting gap, resume immediately",
+      "Gallery Madison & Germantown - launch July 1 with full calendar ready",
+      "Bellamare - increase posting frequency from 2/week to 4/week"
+    ]
+  },
+  "automationStatus": {
+    "performanceAnalyzer": {
+      "name": "Performance Analyzer",
+      "schedule": "Monday 10:00 AM",
+      "lastRun": "Not yet scheduled",
+      "nextRun": "July 7, 2026 10:00 AM",
+      "status": "pending",
+      "docRef": "02_Systems/AUTOMATION-AGENTS.md"
+    },
+    "timeRecommender": {
+      "name": "Optimal Time Recommender",
+      "schedule": "Monday 11:00 AM",
+      "lastRun": "Not yet scheduled",
+      "nextRun": "July 7, 2026 11:00 AM",
+      "status": "pending",
+      "docRef": "02_Systems/AUTOMATION-AGENTS.md"
+    },
+    "diversityTracker": {
+      "name": "Content Diversity Tracker",
+      "schedule": "Friday 3:00 PM",
+      "lastRun": "Not yet scheduled",
+      "nextRun": "July 4, 2026 3:00 PM",
+      "status": "pending",
+      "docRef": "02_Systems/AUTOMATION-AGENTS.md"
+    },
+    "trendSpotter": {
+      "name": "Trend & Agility Spotter",
+      "schedule": "Daily 8:00 AM",
+      "lastRun": "Not yet scheduled",
+      "nextRun": "June 25, 2026 8:00 AM",
+      "status": "pending",
+      "docRef": "02_Systems/AUTOMATION-AGENTS.md"
+    },
+    "competitorMonitor": {
+      "name": "Competitor Activity Monitor",
+      "schedule": "Tuesday 9:00 AM",
+      "lastRun": "Not yet scheduled",
+      "nextRun": "June 25, 2026 9:00 AM",
+      "status": "pending",
+      "docRef": "02_Systems/AUTOMATION-AGENTS.md"
+    },
+    "productionManager": {
+      "name": "Production Pipeline Manager",
+      "schedule": "Sunday 6:00 PM",
+      "lastRun": "Not yet scheduled",
+      "nextRun": "June 30, 2026 6:00 PM",
+      "status": "pending",
+      "docRef": "02_Systems/AUTOMATION-AGENTS.md"
+    },
+    "intelligenceReport": {
+      "name": "Weekly Intelligence Report",
+      "schedule": "Friday 4:00 PM",
+      "lastRun": "Not yet scheduled",
+      "nextRun": "July 4, 2026 4:00 PM",
+      "status": "pending",
+      "docRef": "02_Systems/AUTOMATION-AGENTS.md"
+    }
+  },
+  "metadata": {
+    "dataVersion": "1.0-real",
+    "compiledDate": "2026-06-24",
+    "sourceDocumentation": {
+      "mareecreative": "_SOCIAL/2026_0624_MAREE-IG-AUDIT-DEEP.md",
+      "channelsouth": "02_Clients/Channel South/2026_0624_Organic-Growth-Tracker.md",
+      "bellamare": "02_Clients/Bellamare/Social Media/2026_0624_Organic-Growth-Tracker.md",
+      "gallerymadison": "_SOCIAL/Gallery Madison/2026-06-24_NARRATIVE-BRIEF_Gallery-Madison-July-IG-FB.md",
+      "germantownvillage": "02_Clients/Germantown Village/00_Intake & Discovery/GERMANTOWN-NARRATIVE-BRIEF-JULY-2026.md",
+      "automationAgents": "02_Systems/AUTOMATION-AGENTS.md"
+    },
+    "allMetricsAreReal": true,
+    "trackedBackToSourceDocs": true,
+    "lastAuditDate": "2026-06-24"
+  }
+}

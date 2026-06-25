@@ -1,0 +1,387 @@
+/* GLOBALS */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html, body {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', sans-serif;
+  background: #fafaf8;
+  color: #2a2a2a;
+}
+
+/* CONTAINER */
+.container {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 40px 20px;
+}
+
+/* HEADER */
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 40px;
+  padding-bottom: 20px;
+  border-bottom: 1px solid #e0dcd8;
+}
+
+.header h1 {
+  font-size: 36px;
+  font-weight: 600;
+  letter-spacing: -0.5px;
+}
+
+.headerRight {
+  text-align: right;
+}
+
+.week {
+  font-size: 13px;
+  color: #8a8880;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  margin-bottom: 4px;
+}
+
+.lastUpdated {
+  font-size: 11px;
+  color: #8a8880;
+  opacity: 0.7;
+}
+
+/* ENGAGEMENT BANNER */
+.engagementBanner {
+  background: linear-gradient(135deg, #2a2a2a 0%, #3a3a3a 100%);
+  color: white;
+  padding: 32px;
+  margin-bottom: 40px;
+  border-radius: 0;
+  border: 1px solid #4a4a4a;
+}
+
+.engagementLabel {
+  font-size: 11px;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  opacity: 0.7;
+  margin-bottom: 12px;
+}
+
+.engagementTime {
+  font-size: 36px;
+  font-weight: 600;
+  margin-bottom: 12px;
+}
+
+.engagementText {
+  font-size: 14px;
+  opacity: 0.9;
+}
+
+/* STATS GRID */
+.statsGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 16px;
+  margin-bottom: 40px;
+}
+
+.statBox {
+  background: white;
+  padding: 20px;
+  border: 1px solid #e0dcd8;
+  text-align: center;
+}
+
+.statNumber {
+  font-size: 40px;
+  font-weight: 700;
+  color: #2a2a2a;
+  margin-bottom: 8px;
+}
+
+.statLabel {
+  font-size: 12px;
+  color: #8a8880;
+  text-transform: uppercase;
+  letter-spacing: 0.3px;
+}
+
+/* ALERTS */
+.alertBox {
+  background: #fff3cd;
+  border: 1px solid #ffeaa7;
+  padding: 20px;
+  margin-bottom: 40px;
+  border-left: 4px solid #f59e0b;
+}
+
+.alertTitle {
+  font-weight: 600;
+  margin-bottom: 12px;
+  color: #856404;
+}
+
+.alertList {
+  list-style: none;
+  font-size: 13px;
+}
+
+.alertList li {
+  margin-bottom: 6px;
+  color: #856404;
+}
+
+.alertList li:before {
+  content: "→ ";
+  margin-right: 6px;
+  font-weight: 600;
+}
+
+/* SECTION TITLE */
+.sectionTitle {
+  font-size: 18px;
+  font-weight: 600;
+  margin-bottom: 24px;
+  margin-top: 40px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  color: #8a8880;
+}
+
+/* CLIENTS GRID */
+.clientsGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+  gap: 20px;
+  margin-bottom: 40px;
+}
+
+.clientCard {
+  background: white;
+  border: 1px solid #e0dcd8;
+  border-left: 4px solid;
+  padding: 24px;
+  cursor: pointer;
+  transition: all 0.2s;
+  text-decoration: none;
+  color: inherit;
+  display: block;
+}
+
+.clientCard:hover {
+  border-color: #2a2a2a;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  transform: translateY(-2px);
+}
+
+.clientHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 20px;
+}
+
+.clientName {
+  font-size: 18px;
+  font-weight: 600;
+  margin-bottom: 4px;
+}
+
+.clientType {
+  font-size: 11px;
+  color: #8a8880;
+  text-transform: uppercase;
+  letter-spacing: 0.3px;
+}
+
+.statusBadge {
+  padding: 6px 12px;
+  font-size: 10px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.2px;
+  border-radius: 0;
+}
+
+/* PROGRESS SECTION */
+.progressSection {
+  margin-bottom: 20px;
+  padding-bottom: 20px;
+  border-bottom: 1px solid #e0dcd8;
+}
+
+.progressItem {
+  margin-bottom: 16px;
+}
+
+.progressItem:last-child {
+  margin-bottom: 0;
+}
+
+.progressLabel {
+  font-size: 12px;
+  font-weight: 600;
+  margin-bottom: 8px;
+  color: #2a2a2a;
+}
+
+.progressBar {
+  background: #f3f4f6;
+  height: 8px;
+  border-radius: 0;
+  overflow: hidden;
+}
+
+.progressFill {
+  height: 100%;
+  transition: width 0.3s ease;
+}
+
+/* METRICS GRID */
+.metricsGrid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 12px;
+  margin-bottom: 20px;
+  padding-bottom: 20px;
+  border-bottom: 1px solid #e0dcd8;
+}
+
+.metric {
+  padding: 12px;
+  background: #fafaf8;
+}
+
+.metricLabel {
+  font-size: 10px;
+  color: #8a8880;
+  text-transform: uppercase;
+  margin-bottom: 4px;
+  letter-spacing: 0.2px;
+}
+
+.metricValue {
+  font-size: 18px;
+  font-weight: 700;
+  color: #2a2a2a;
+}
+
+.metricSmall {
+  font-size: 11px;
+  color: #8a8880;
+  margin-top: 2px;
+}
+
+/* ACTION BUTTON */
+.actionBtn {
+  width: 100%;
+  padding: 12px;
+  border: none;
+  cursor: pointer;
+  font-size: 13px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.3px;
+  transition: opacity 0.2s;
+}
+
+.actionBtn:hover {
+  opacity: 0.9;
+}
+
+/* AUTOMATION GRID */
+.automationGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 16px;
+  margin-bottom: 40px;
+}
+
+.automationCard {
+  background: white;
+  border: 1px solid #e0dcd8;
+  padding: 20px;
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.automationDot {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+
+.automationName {
+  font-size: 14px;
+  font-weight: 600;
+  margin-bottom: 8px;
+}
+
+.automationMeta {
+  font-size: 11px;
+  color: #8a8880;
+  line-height: 1.4;
+}
+
+/* FOOTER */
+.footer {
+  text-align: center;
+  font-size: 12px;
+  color: #8a8880;
+  padding-top: 40px;
+  border-top: 1px solid #e0dcd8;
+  margin-top: 60px;
+}
+
+.footer div {
+  margin-bottom: 6px;
+}
+
+/* LOADING & ERROR */
+.loading, .error {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 18px;
+  color: #8a8880;
+}
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+  .container {
+    padding: 20px;
+  }
+
+  .header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 16px;
+  }
+
+  .headerRight {
+    text-align: left;
+  }
+
+  .clientsGrid {
+    grid-template-columns: 1fr;
+  }
+
+  .statsGrid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .metricsGrid {
+    grid-template-columns: 1fr;
+  }
+
+  .automationGrid {
+    grid-template-columns: 1fr;
+  }
+}
