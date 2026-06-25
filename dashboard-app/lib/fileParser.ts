@@ -74,30 +74,83 @@ export function getFileContent(relativePath: string): string | null {
 }
 
 /**
- * Map of canonical file locations for each client
+ * Map of canonical file locations for each client (REAL structure)
+ * These point to ~/Downloads/Maree Creative/02_Clients/[CLIENT]/
  */
 export const CLIENT_FILE_PATHS: Record<string, Record<string, string>> = {
   'maree-creative': {
-    audit: '_SOCIAL/2026_0624_MAREE-IG-AUDIT-DEEP.md',
-    narrative: '_SOCIAL/2026_0624_MAREE-Social-Narrative-Brief.md',
-    calendar: '_SOCIAL/2026-07-24_Maree-Social-Calendar-July.xlsx',
+    narrative: 'canonical-files/02_Clients/Marée Creative/00_Intake & Discovery/NARRATIVE-BRIEF.md',
+    calendar: 'canonical-files/02_Clients/Marée Creative/03_Deliverables/SOCIAL-CALENDAR.md',
+    audit: 'canonical-files/02_Clients/Marée Creative/00_Intake & Discovery/SOCIAL-AUDIT.md',
   },
   'channel-south': {
-    tracker: '02_Clients/Channel South/2026_0624_Organic-Growth-Tracker.md',
-    audit: '02_Clients/Channel South/Claude Channel South/2026-06-15_channel-south-social-audit-DEEP.md',
-    calendar: '02_Clients/Channel South/2026-06-17_channel-south-CONTENT-BATCH-ready.md',
+    narrative: 'canonical-files/02_Clients/Channel South/00_Intake & Discovery/NARRATIVE-BRIEF.md',
+    calendar: 'canonical-files/02_Clients/Channel South/03_Deliverables/SOCIAL-CALENDAR.md',
+    audit: 'canonical-files/02_Clients/Channel South/00_Intake & Discovery/COMPETITIVE-AUDIT.md',
   },
   'bellamare': {
-    tracker: '02_Clients/Bellamare/Social Media/2026_0624_Organic-Growth-Tracker.md',
-    calendar: '02_Clients/Bellamare/Social Media/2026_0624_Bellamare-July-Social-Calendar.md',
+    narrative: 'canonical-files/02_Clients/Bellamare/00_Intake & Discovery/NARRATIVE-BRIEF.md',
+    calendar: 'canonical-files/02_Clients/Bellamare/03_Deliverables/SOCIAL-CALENDAR.md',
+    audit: 'canonical-files/02_Clients/Bellamare/00_Intake & Discovery/COMPETITIVE-AUDIT.md',
   },
   'gallery-madison': {
-    narrative: '_SOCIAL/Gallery Madison/2026-06-24_NARRATIVE-BRIEF_Gallery-Madison-July-IG-FB.md',
-    audit: '_SOCIAL/Gallery Madison/2026-06-24_GALLERY-COMPETITOR-AUDIT.md',
-    calendar: '_SOCIAL/Gallery Madison/2026-06-24_JULY-CALENDAR_Gallery-Madison-30day.md',
+    narrative: 'canonical-files/02_Clients/Gallery Madison/00_Intake & Discovery/NARRATIVE-BRIEF.md',
+    calendar: 'canonical-files/02_Clients/Gallery Madison/03_Deliverables/SOCIAL-CALENDAR.md',
+    audit: 'canonical-files/02_Clients/Gallery Madison/00_Intake & Discovery/COMPETITIVE-AUDIT.md',
   },
   'germantown-village': {
-    narrative: '02_Clients/Germantown Village/00_Intake & Discovery/GERMANTOWN-NARRATIVE-BRIEF-JULY-2026.md',
-    calendar: '02_Clients/Germantown Village/03_Deliverables/GV-July-2026-Social-Calendar.docx',
+    narrative: 'canonical-files/02_Clients/Germantown Village/00_Intake & Discovery/NARRATIVE-BRIEF.md',
+    calendar: 'canonical-files/02_Clients/Germantown Village/03_Deliverables/SOCIAL-CALENDAR.md',
+    audit: 'canonical-files/02_Clients/Germantown Village/00_Intake & Discovery/COMPETITIVE-AUDIT.md',
+  },
+};
+
+/**
+ * Agent output files (company-wide intelligence)
+ */
+export const AGENT_OUTPUT_PATHS = {
+  performance: 'canonical-files/03_Analytics/performance-analysis/PERFORMANCE-ANALYSIS.md',
+  postingSchedule: 'canonical-files/03_Analytics/POSTING-SCHEDULE-RECOMMENDATIONS.md',
+  trends: 'canonical-files/03_Analytics/trends/TODAYS-OPPORTUNITIES.md',
+  competitors: 'canonical-files/03_Analytics/competitor-analysis/WEEKLY-COMPETITOR-MOVES.md',
+  productionChecklist: 'canonical-files/02_Systems/production-checklists/PRODUCTION-CHECKLIST-THIS-WEEK.md',
+  diversityReport: 'canonical-files/02_Systems/production-checklists/DIVERSITY-REPORT-CURRENT-WEEK.md',
+  intelligenceBrief: 'canonical-files/03_Analytics/intelligence-reports/FRIDAY-INTELLIGENCE-BRIEF.md',
+};
+
+/**
+ * Intelligence rules that should be displayed with metrics
+ * Maps to AGENT-INTELLIGENCE-RULES.md
+ */
+export const INTELLIGENCE_INSIGHTS = {
+  authenticity: {
+    rule: 'Authenticity > Polish',
+    insight: 'Founder/team content (phone videos, casual) gets 3x engagement vs designed graphics',
+    action: 'Test 60% authentic / 40% designed content split',
+  },
+  engagementDepth: {
+    rule: 'Engagement Depth > Reach',
+    insight: '50 real comments beats 10 posts with zero engagement',
+    action: 'Aim for >0.1 comments per like. Respond to comments <2 hours for 3x conversion',
+  },
+  distribution: {
+    rule: 'Distribution > Creation',
+    insight: 'One great piece repurposed across 5 platforms beats 5 mediocre native pieces',
+    action: 'Create once, distribute 5 ways (IG Reel, TikTok, LinkedIn carousel, YouTube Short, email)',
+  },
+  hook: {
+    rule: 'First 1-2 Seconds = Make or Break',
+    insight: 'TikTok/Reels with 0-2s hooks get 4x algorithmic push vs slow intros',
+    action: 'Lead with text/visual hook in frame 1. No setup, no buildup',
+  },
+  niche: {
+    rule: 'Niche Consistency',
+    insight: 'Jumping between topics kills algorithmic growth. One niche = 2-3x faster growth',
+    action: 'Stick to one topic for 80% of posts. Maximize algorithmic familiarity',
+  },
+  testThenPay: {
+    rule: 'Test Organic Before Paid',
+    insight: 'Run content 3-5 days organically first. Prove it resonates before spending on ads',
+    action: 'Use 70% of effort on organic testing. Amplify winners with 30% paid budget',
   },
 };

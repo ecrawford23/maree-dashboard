@@ -1,5 +1,5 @@
 import type { NextApiRequest, NextApiResponse } from 'next'
-import { getFileContent, parseGrowthTracker, parseSocialAudit, parseNarrativeBrief, CLIENT_FILE_PATHS } from '../../lib/fileParser'
+import { getFileContent, parseGrowthTracker, parseSocialAudit, parseNarrativeBrief, CLIENT_FILE_PATHS, INTELLIGENCE_INSIGHTS } from '../../lib/fileParser'
 
 interface ClientData {
   id: string
@@ -20,6 +20,11 @@ interface ClientData {
   status: string
   topPost: { title: string; engagement: string; reach: string }
   contentThemes: string[]
+  intelligence: {
+    rule: string
+    insight: string
+    action: string
+  }
 }
 
 const CLIENT_METADATA: Record<string, Partial<ClientData>> = {
@@ -100,6 +105,11 @@ export default function handler(req: NextApiRequest, res: NextApiResponse) {
         }
       }
 
+      // Rotate through intelligence insights for visual interest
+      const insights = Object.values(INTELLIGENCE_INSIGHTS)
+      const insightIndex = clients.length % insights.length
+      const currentInsight = insights[insightIndex]
+
       const client: ClientData = {
         id: clientId,
         name: metadata.name || 'Unknown',
@@ -129,6 +139,11 @@ export default function handler(req: NextApiRequest, res: NextApiResponse) {
         status: 'Loading',
         topPost: { title: 'Loading...', engagement: 'TBD', reach: 'TBD' },
         contentThemes: narrativeData.contentPillars || [],
+        intelligence: {
+          rule: currentInsight.rule,
+          insight: currentInsight.insight,
+          action: currentInsight.action,
+        },
       }
 
       clients.push(client)

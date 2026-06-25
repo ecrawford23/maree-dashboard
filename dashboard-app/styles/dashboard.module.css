@@ -263,6 +263,35 @@
   margin-top: 2px;
 }
 
+/* INTELLIGENCE BOX */
+.intelligenceBox {
+  border: 1px solid rgba(0, 0, 0, 0.08);
+  border-left: 3px solid;
+  padding: 12px;
+  margin-bottom: 16px;
+  border-radius: 0;
+  background-color: rgba(139, 92, 246, 0.04);
+}
+
+.intelligenceRule {
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 0.3px;
+  margin-bottom: 4px;
+}
+
+.intelligenceInsight {
+  font-size: 13px;
+  line-height: 1.4;
+  color: #2a2a2a;
+}
+
+.intelligenceAction {
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 0.2px;
+}
+
 /* ACTION BUTTON */
 .actionBtn {
   width: 100%;

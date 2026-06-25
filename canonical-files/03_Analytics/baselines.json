@@ -1,0 +1,73 @@
+{
+  "metadata": {
+    "lastUpdated": "2026-06-24",
+    "period": "Monthly",
+    "currency": "followers + engagement rate"
+  },
+  "goals": {
+    "channel-south": {
+      "followers": {
+        "monthly": 50,
+        "weekly": 12,
+        "description": "Gulfport hotel/hospitality venue"
+      },
+      "engagement": {
+        "monthly": "4%",
+        "platforms": ["Instagram", "Facebook"]
+      }
+    },
+    "bellamare": {
+      "followers": {
+        "monthly": 100,
+        "weekly": 23,
+        "description": "Real estate development company"
+      },
+      "engagement": {
+        "monthly": "5%",
+        "platforms": ["Instagram", "Facebook", "LinkedIn", "TikTok"]
+      }
+    },
+    "gallery-madison": {
+      "followers": {
+        "monthly": 150,
+        "weekly": 35,
+        "description": "Gallery + community development"
+      },
+      "engagement": {
+        "monthly": "4%",
+        "platforms": ["Instagram", "Facebook", "TikTok"]
+      }
+    },
+    "germantown-village": {
+      "followers": {
+        "monthly": 75,
+        "weekly": 18,
+        "description": "Retail + community center"
+      },
+      "engagement": {
+        "monthly": "4%",
+        "platforms": ["Instagram", "Facebook"]
+      }
+    },
+    "maree-creative": {
+      "followers": {
+        "monthly": 75,
+        "weekly": 18,
+        "description": "Marée's own agency account"
+      },
+      "engagement": {
+        "monthly": "5%",
+        "platforms": ["Instagram", "TikTok"]
+      }
+    }
+  },
+  "totalMonthlyGoal": {
+    "followers": 450,
+    "description": "Combined across all 5 clients"
+  },
+  "reportingSchedule": {
+    "frequency": "Monthly",
+    "dueDate": "First Monday of each month",
+    "updateProcess": "Upload Meta CSV exports to ~/03_Analytics/meta-exports/, Claude parser updates snapshot"
+  }
+}

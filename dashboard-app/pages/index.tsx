@@ -15,6 +15,11 @@ interface Client {
   nextBatch: string
   status: string
   topPost: { title: string; engagement: string; reach: string }
+  intelligence?: {
+    rule: string
+    insight: string
+    action: string
+  }
 }
 
 interface Data {
@@ -183,6 +188,7 @@ export default function Dashboard() {
             thisWeekPosts={client.thisWeekPosts}
             assetsReady={client.assetsReady}
             status={client.status}
+            intelligence={client.intelligence}
             onUpdate={(field, value) => {
               // Refetch data after update
               window.location.reload()

@@ -10,6 +10,11 @@ interface ClientCardProps {
   thisWeekPosts: number
   assetsReady: number
   status: string
+  intelligence?: {
+    rule: string
+    insight: string
+    action: string
+  }
   onUpdate: (field: string, value: any) => void
 }
 
@@ -22,6 +27,7 @@ export default function ClientCard({
   thisWeekPosts,
   assetsReady,
   status,
+  intelligence,
   onUpdate,
 }: ClientCardProps) {
   const [editMode, setEditMode] = useState(false)
@@ -231,6 +237,20 @@ export default function ClientCard({
           </div>
         ))}
       </div>
+
+      {intelligence && (
+        <div className={styles.intelligenceBox} style={{ borderLeftColor: color, background: `${color}08` }}>
+          <div className={styles.intelligenceRule} style={{ color: color, fontWeight: 600, fontSize: 12 }}>
+            💡 {intelligence.rule}
+          </div>
+          <div className={styles.intelligenceInsight} style={{ fontSize: 13, marginTop: 6 }}>
+            {intelligence.insight}
+          </div>
+          <div className={styles.intelligenceAction} style={{ color: color, fontSize: 12, marginTop: 8, fontWeight: 500 }}>
+            → {intelligence.action}
+          </div>
+        </div>
+      )}
 
       <div
         className={styles.actionBtn}
